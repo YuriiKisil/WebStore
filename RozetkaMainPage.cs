@@ -14,7 +14,7 @@ namespace WebStore
         [FindsBy(How = How.XPath, Using = "//div[@class='search-form__input-wrapper']//input")]
         private IWebElement Searchbar;
 
-        [FindsBy(How = How.XPath, Using = "//form[@class='search-form ng-valid ng-dirty ng-touched']//button[3]")]
+        [FindsBy(How = How.XPath, Using = "//button[@class='button button_color_green button_size_medium search-form__submit']")]
         private IWebElement Searchbtn;
 
 

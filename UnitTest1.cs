@@ -13,6 +13,7 @@ namespace WebStore
         {
             new RozetkaMainPage().OpenRozetka();
             new RozetkaMainPage().SearchItem("laptop");
+            new RozetkaSearchList().SetPriceRange(3000, 4000);
         }
     }
 }
