@@ -15,7 +15,7 @@ namespace WebStore
 {
     class GraphPage  : BasePage
     {
-        
+        Dictionary<int, string> points; 
         public void OpenGraphPage()
         {
             driver.Navigate().GoToUrl("https://www.highcharts.com/demo/combo-timeline?__cf_chl_jschl_tk__=ef2cf32e3aba4d8a07eb77d98e342af21cd1fec5-1582547443-0-Ac4jESMS57PpuUpNFK0fcdcsyrL0wOaARb0xrJBPdGADsFyKrqLNLHj3pJZuGr0tV6K3ExgpJDL49Zggx_nubhVP4MxGmiWf98NAFjziC4D2-w53n4v_qpQSoqQIzA80jvqC2sLDQ97YHxJE7KH6uurPqy7ro1o3x1GLa16RX1a_Q9WIDZDLnNo4JJJ5uGGwtGEradWrGv0VZViqh9KX1xCzUQKSC79vvDF8fFxpe8lHUrwc9Q7iQoUgEeGDw2dp0mg5hJHqWDeZCp2JqkLOuFHUCTPAr-iawlO5aTClUPq83vBNsoC1CyxAks5CZr_ttVRifKhWunEBYsZow4GyvOFIPJXJXB_FcWIXnfFdf_ri");
@@ -33,7 +33,8 @@ namespace WebStore
                 Thread.Sleep(1000);
                 IWebElement ToolTipDate = driver.FindElement(By.CssSelector("g.highcharts-tooltip text tspan:nth-child(1)"));
                // IWebElement ToolTipText = driver.FindElement(By.CssSelector("g.highcharts-tooltip text tspan:nth-child(6)"));
-                Console.WriteLine("{0}", ToolTipDate.Text);                                                                                                                                                            
+                Console.WriteLine("{0}", ToolTipDate.Text);
+                points.Add(i, ToolTipDate.Text);
             }
 
 
@@ -54,8 +55,9 @@ namespace WebStore
                     res = false;
                     break;
                 }
+                
             }
-
+            return res;
 
         }
     }
