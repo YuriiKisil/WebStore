@@ -18,17 +18,18 @@ namespace WebStore
         private IWebElement Searchbtn;
 
 
-        //private string s = "laptop";
+        private string s = "laptop";
         public void OpenRozetka()
         {
             driver.Navigate().GoToUrl("https://rozetka.com.ua/");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.Manage().Window.Maximize();
 
         }
         public void SearchItem(string s)
         {
             Searchbar.SendKeys(s);
-            Searchbtn.Click();
+            Searchbar.SendKeys(Keys.Enter); ;
         }
 
 
