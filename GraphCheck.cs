@@ -39,7 +39,7 @@ namespace WebStore
 
 
         }
-        public bool CheckGraph(Dictionary<int,String> points)
+        public bool CheckGraph(Dictionary<String,String> points)
         {
             bool res = true;
             for (int i = 4; i < 61; i++)
@@ -50,7 +50,7 @@ namespace WebStore
                 action.MoveToElement(driver.FindElement(By.XPath("//*[@fill='#7cb5ec'][" + i + "]"))).Perform();
                 Thread.Sleep(500);
                 IWebElement ToolTipDate = driver.FindElement(By.CssSelector("g.highcharts-tooltip text tspan:nth-child(1)"));
-                if (points[key] != ToolTipDate.Text)
+                if (points[key.ToString()] != ToolTipDate.Text)
                 {
                     res = false;
                     break;
